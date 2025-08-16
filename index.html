@@ -829,6 +829,7 @@
             }
 
             function updateLearningSectionStates() {
+                console.log('updateLearningSectionStates called. currentLearningSectionId:', currentLearningSectionId);
                 learningSections.forEach(section => {
                     const sectionId = section.id;
                     const summarySpan = section.querySelector('summary span');
@@ -846,6 +847,7 @@
 
                         // Automatically start mini-quiz for the active section if not completed
                         if (!sectionCompletion[sectionId] && allQuizQuestions[sectionId] && allQuizQuestions[sectionId].length > 0) {
+                            console.log(`Starting mini-quiz for section: ${sectionId}`);
                             startMiniQuiz(sectionId);
                         } else if (sectionCompletion[sectionId]) {
                             // If somehow active but already completed, hide quiz area
@@ -979,10 +981,12 @@
                     
                     if (miniQuizCorrectAnswersCount === totalQuestions) {
                         // All correct, enable validate button
+                        console.log(`Mini-quiz for ${currentSectionId} passed! Showing validate button.`);
                         document.querySelector(`#${currentSectionId} .validate-section-btn`).classList.remove('hidden');
                         document.getElementById(containerElementId).innerHTML = `<p class="text-green-700 font-semibold">Mini-quiz réussi à 100% ! Vous pouvez valider cette section. ✅</p>`;
                     } else {
                         // Not all correct, ask to retry
+                        console.log(`Mini-quiz for ${currentSectionId} failed. Asking to retry.`);
                         document.getElementById(containerElementId).innerHTML = `
                             <p class="text-red-700 font-semibold mb-4">Mini-quiz non réussi (${miniQuizCorrectAnswersCount}/${totalQuestions} bonnes réponses). Veuillez réessayer pour valider la section. 😔</p>
                             <button class="retry-mini-quiz-btn py-2 px-4 bg-red-600 text-white rounded-lg font-semibold hover:bg-red-700 transition" data-section="${currentSectionId}">Réessayer le Mini-Quiz 🔄</button>
@@ -998,6 +1002,7 @@
             }
 
             function startMiniQuiz(sectionId) {
+                console.log(`Starting mini-quiz for section: ${sectionId}`);
                 currentActiveQuizType = sectionId;
                 currentQuizQuestionIndex = 0;
                 miniQuizCorrectAnswersCount = 0;
@@ -1012,6 +1017,7 @@
             }
 
             function validateSection(sectionId) {
+                console.log(`Validating section: ${sectionId}`);
                 sectionCompletion[sectionId] = true;
                 const sectionIndex = sectionOrder.indexOf(sectionId);
                 
@@ -1026,14 +1032,18 @@
                 // Unlock next section if exists
                 if (sectionIndex < sectionOrder.length - 1) {
                     currentLearningSectionId = sectionOrder[sectionIndex + 1];
+                    console.log(`Next section to unlock: ${currentLearningSectionId}`);
                     updateLearningSectionStates(); // Re-run to unlock the next one
                     // Open the newly unlocked section's details
                     const nextSectionDetails = document.querySelector(`#${currentLearningSectionId} details`);
                     if (nextSectionDetails) nextSectionDetails.open = true;
+                } else {
+                    console.log("All sections completed. Final quiz should be active.");
                 }
             }
 
             function startFinalQuiz() {
+                console.log("Starting final quiz.");
                 currentActiveQuizType = 'final-quiz'; 
                 currentQuizQuestionIndex = 0;
                 miniQuizCorrectAnswersCount = 0; 
