@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B0_M2_001_Droit social et veille sociale</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Random colors for accents, neutral background -->
+    <!-- Application Structure Plan: Ce document est structuré comme un guide interactif de formation. Une barre de progression visuelle en haut permet de suivre l'avancement. Le contenu est divisé en sections thématiques (Introduction, Notion de Droit Social, Sources Nationales Étatiques, Sources Professionnelles, Hiérarchie des Sources, Veille Sociale, À Retenir), chacune étant initialement verrouillée sauf la première. Pour débloquer la section suivante, l'utilisateur doit réussir un mini-quiz (2-3 questions) associé à la section courante avec un score de 100%. Une fois toutes les sections validées, le quiz final devient accessible. Cette approche gamifiée, avec des retours visuels et des validations par mini-quiz, assure une lecture active et une compréhension approfondie avant de passer au module suivant, rendant l'apprentissage ludique et efficace. -->
+    <!-- Visualization & Content Choices: 
+        - Barre de Progression (HTML/CSS): Objectif: Informer, Engager. Des cercles colorés indiquent l'état de chaque section (verrouillée, active, complétée), offrant un feedback visuel immédiat sur l'avancement.
+        - Sections thématiques (HTML/CSS/JS - Accordions avec verrouillage): Objectif: Organiser, Informer, Guider. Les sections sont encapsulées dans des conteneurs qui gèrent leur état (verrouillé/déverrouillé) via des classes CSS (opacité, pointer-events). Les accordéons permettent de masquer/afficher le contenu.
+        - Mini-Quiz par Section (HTML/CSS/JS): Objectif: Évaluer, Renforcer. Chaque section a son propre mini-quiz. La réussite à 100% est obligatoire pour la validation. Cela force l'utilisateur à assimiler le contenu avant de progresser. Le quiz final est conditionné par la validation de toutes les sections.
+        - Texte détaillé avec mise en gras et emojis: Objectif: Informer, Engager. La mise en gras souligne les concepts clés, et les emojis ajoutent une touche visuelle et ludique.
+        - Quiz Principal (HTML/CSS/JS): Objectif: Évaluer, Renforcer. Le quiz complet est débloqué à la fin du parcours, avec des justifications détaillées pour chaque réponse, basées sur des sources réglementaires.
+        - Couleurs et Pep (Tailwind CSS): Utilisation de couleurs aléatoires pour les boutons, les bordures, les arrière-plans subtils et les icônes, rendant l'interface plus dynamique et "beau gosse".
+        - Justification: Ces choix visent à transformer un sujet réglementaire complexe en une expérience d'apprentissage interactive, structurée et motivante, sans recourir à des images ou des SVG. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F8F8; /* Light gray background */
+            color: #333333; /* Dark gray text */
+        }
+        .quiz-option input[type="radio"]:checked + label {
+            background-color: var(--accent-light-color);
+            border-color: var(--accent-dark-color);
+        }
+        .quiz-option label {
+            transition: all 0.2s ease;
+        }
+        .quiz-feedback.correct {
+            background-color: #D4EDDA; /* Light green */
+            color: #155724; /* Dark green */
+        }
+        .quiz-feedback.incorrect {
+            background-color: #F8D7DA; /* Light red */
+            color: #721C24; /* Dark red */
+        }
+        .section-locked {
+            opacity: 0.5;
+            pointer-events: none;
+            filter: grayscale(80%);
+        }
+        .progress-dot {
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            background-color: #B0BEC5; /* Blue-gray 300 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: bold;
+            color: #FFFFFF;
+            transition: background-color 0.3s ease;
+        }
+        .progress-dot.active {
+            background-color: var(--accent-dark-color);
+        }
+        .progress-dot.completed {
+            background-color: #388E3C; /* Dark green */
+        }
+        .progress-line {
+            flex-grow: 1;
+            height: 4px;
+            background-color: #CFD8DC; /* Blue-gray 200 */
+            transition: background-color 0.3s ease;
+        }
+        .progress-line.completed {
+            background-color: #388E3C; /* Dark green */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-gradient-to-r from-gray-800 to-gray-700 shadow-lg" style="background-image: linear-gradient(to right, var(--header-start-color), var(--header-end-color));">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 text-white">
+            <h1 class="text-3xl font-bold tracking-tight">B0_M2_001_Droit social et veille sociale</h1>
+            <p class="mt-1 text-gray-200" style="color: var(--header-text-color);">Comprenez le droit social et la veille sociale en entreprise. ⚖️</p>
+        </div>
+    </header>
+
+    <main class="py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <section id="introduction" class="mb-12 bg-white p-6 rounded-xl shadow-lg border-l-4" style="border-color: var(--accent-dark-color);">
+                <details open class="cursor-pointer">
+                    <summary class="font-bold text-xl text-gray-800 flex items-center py-2">
+                        Introduction : Droit Social et Veille 📚
+                        <span class="ml-2 text-sm font-normal" style="color: var(--accent-dark-color);">Section active</span>
+                    </summary>
+                    <div class="mt-4 text-gray-700 space-y-4">
+                        <p>Bienvenue dans ce module qui aborde la notion de <strong>droit social</strong>, ses différentes sources, leur hiérarchie, et le positionnement nécessaire en matière de <strong>veille sociale</strong>.</p>
+                        <p>À l'issue de ce cours, vous serez sensibilisé à la démarche de veille sociale et vous aurez une meilleure compréhension des implications du droit social dans l'ensemble des procédures internes aux entreprises.</p>
+                        <p>Ce module vous guidera à travers :</p>
+                        <ul class="list-disc list-inside ml-4">
+                            <li>La <strong>notion de droit social</strong> (droit du travail, droit de la sécurité sociale).</li>
+                            <li>Les <strong>sources nationales étatiques</strong> (Constitution, lois, règlements, ordonnances, Code du travail, jurisprudence).</li>
+                            <li>Les <strong>sources professionnelles</strong> (conventions et accords collectifs, usages, engagements unilatéraux, accords atypiques).</li>
+                            <li>La <strong>hiérarchie traditionnelle des sources du droit social</strong>.</li>
+                            <li>La <strong>conduite de la veille sociale</strong>.</li>
+                        </ul>
+                        <div class="flex justify-center my-4">
+                            <div class="p-6 rounded-lg font-semibold text-center text-2xl" style="background-color: var(--accent-light-color); color: var(--accent-dark-color);">
+                                Le droit social : un pilier de l'entreprise ! 🏢
+                            </div>
+                        </div>
+                    </div>
+                </details>
+                <div class="mini-quiz-area mt-6 p-4 rounded-lg" style="background-color: var(--accent-light-color);" id="mini-quiz-introduction">
+                    <h4 class="font-bold text-lg mb-4" style="color: var(--accent-dark-color);">Mini-Quiz : Introduction 📝</h4>
+                    <div id="mini-quiz-introduction-container"></div>
+                    <button class="validate-section-btn mt-4 py-2 px-4 text-white rounded-lg font-semibold hover:opacity-90 transition" style="background-color: var(--accent-dark-color);">Valider la Section ✅</button>
+                </div>
+            </section>
+
+            <!-- Global Instruction for Progression -->
+            <div class="border-l-4 p-4 mb-8" role="alert" style="background-color: var(--accent-light-color); border-color: var(--accent-dark-color); color: var(--accent-dark-color);">
+                <p class="font-bold">Comment ça marche ?</p>
+                <p>Pour progresser dans ce module, vous devez <strong>valider chaque section</strong>. Lisez attentivement le contenu, puis répondez correctement à <strong>toutes les questions du mini-quiz</strong> associé. Une fois le mini-quiz réussi à 100%, le bouton "Valider la Section" apparaîtra, débloquant ainsi la section suivante. Bonne lecture et bon quiz !</p>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="flex items-center justify-between mb-12 px-4">
+                <div class="progress-dot" id="dot-introduction">1</div>
+                <div class="progress-line" id="line-introduction"></div>
+                <div class="progress-dot" id="dot-notion-droit-social">2</div>
+                <div class="progress-line" id="line-notion-droit-social"></div>
+                <div class="progress-dot" id="dot-sources-nationales-etatiques">3</div>
+                <div class="progress-line" id="line-sources-nationales-etatiques"></div>
+                <div class="progress-dot" id="dot-sources-professionnelles">4</div>
+                <div class="progress-line" id="line-sources-professionnelles"></div>
+                <div class="progress-dot" id="dot-hierarchie-sources">5</div>
+                <div class="progress-line" id="line-hierarchie-sources"></div>
+                <div class="progress-dot" id="dot-veille-sociale">6</div>
+                <div class="progress-line" id="line-veille-sociale"></div>
+                <div class="progress-dot" id="dot-a-retenir">7</div>
+                <div class="progress-line" id="line-a-retenir"></div>
+                <div class="progress-dot" id="dot-final-quiz">🏁</div>
+            </div>
+
+            <section id="notion-droit-social" class="learning-section mb-12 bg-white p-6 rounded-xl shadow-lg border-l-4 border-gray-300 section-locked">
+                <details class="cursor-pointer">
+                    <summary class="font-bold text-xl text-gray-800 flex items-center py-2">
+                        Notion de Droit Social 🧑‍⚖️
+                        <span class="ml-2 text-gray-500 text-sm font-normal" id="status-notion-droit-social">(Verrouillée 🔒)</span>
+                    </summary>
+                    <div class="mt-4 text-gray-700 space-y-4">
+                        <h3 class="font-semibold text-lg">A. Droit Social :</h3>
+                        <p>Le <strong>droit social</strong> est une branche du droit autonome qui se compose de deux éléments : le <strong>droit du travail</strong> et le <strong>droit de la sécurité sociale</strong>.</p>
+
+                        <h3 class="font-semibold text-lg mt-4">B. Droit du Travail :</h3>
+                        <p>C'est la branche du droit qui réglemente les relations entre employeurs et salariés. Il couvre :</p>
+                        <ul class="list-disc list-inside ml-4">
+                            <li>Les <strong>relations individuelles</strong> issues du contrat de travail (formation, conditions de travail, durée, congés, rémunération, hygiène et sécurité, rupture du contrat).</li>
+                            <li>Les <strong>relations collectives de travail</strong> (représentants du personnel, institutions représentatives, missions et droits des représentants).</li>
+                        </ul>
+
+                        <h3 class="font-semibold text-lg mt-4">C. Droit de la Sécurité Sociale :</h3>
+                        <p>C'est la branche du droit qui organise la <strong>protection sociale</strong>. Elle protège chacun contre certains risques de la vie professionnelle ou personnelle :</p>
+                        <ul class="list-disc list-inside ml-4">
+                            <li>Maladie, Maternité, Vieillesse, Invalidité, Décès.</li>
+                            <li>Accidents du travail, Maladies professionnelles.</li>
+                        </ul>
+                        <p class="italic"><strong>Remarque :</strong> La protection contre le chômage, bien que faisant partie de la protection sociale, n'est pas réglementée par le droit de la sécurité sociale, mais par le droit du travail.</p>
+                    </div>
+                </details>
+                <div class="mini-quiz-area mt-6 p-4 rounded-lg" style="background-color: var(--accent-light-color);" id="mini-quiz-notion-droit-social">
+                    <h4 class="font-bold text-lg mb-4" style="color: var(--accent-dark-color);">Mini-Quiz : Notion de Droit Social 📝</h4>
+                    <div id="mini-quiz-notion-droit-social-container"></div>
+                    <button class="validate-section-btn mt-4 py-2 px-4 text-white rounded-lg font-semibold hover:opacity-90 transition" style="background-color: var(--accent-dark-color);">Valider la Section ✅</button>
+                </div>
+            </section>
+
+            <section id="sources-nationales-etatiques" class="learning-section mb-12 bg-white p-6 rounded-xl shadow-lg border-l-4 border-gray-300 section-locked">
+                <details class="cursor-pointer">
+                    <summary class="font-bold text-xl text-gray-800 flex items-center py-2">
+                        Sources Nationales Étatiques du Droit Social 🏛️
+                        <span class="ml-2 text-gray-500 text-sm font-normal" id="status-sources-nationales-etatiques">(Verrouillée 🔒)</span>
+                    </summary>
+                    <div class="mt-4 text-gray-700 space-y-4">
+                        <h3 class="font-semibold text-lg">A. Textes Constitutionnels :</h3>
+                        <p>Le bloc de constitutionnalité (Constitution de 1958, Déclaration des droits de l'homme et du citoyen, Préambule de la Constitution de 1946) contient les <strong>principes fondamentaux du droit français</strong>, y compris les droits sociaux fondamentaux comme la liberté du travail, la liberté syndicale, le droit de grève, le droit à la négociation collective et le droit à la protection sociale.</p>
+
+                        <h3 class="font-semibold text-lg mt-4">B. Lois, Règlements et Ordonnances :</h3>
+                        <p>Le droit social est une matière partagée entre le Parlement (lois) et le Gouvernement (règlements).</p>
+                        <ul class="list-disc list-inside ml-4">
+                            <li>Les <strong>Lois</strong> (votées par le Parlement) posent les principes fondamentaux (ex: durée hebdomadaire de 35 heures, formation professionnelle).</li>
+                            <li>Les <strong>Règlements</strong> (décrets, arrêtés ministériels) définissent les modalités d'application des lois.</li>
+                            <li>Les <strong>Ordonnances</strong> permettent au Gouvernement de légiférer rapidement sur des domaines normalement réservés au Parlement, avec son autorisation.</li>
+                        </ul>
+
+                        <h3 class="font-semibold text-lg mt-4">C. Code du Travail :</h3>
+                        <p>C'est une <strong>compilation de textes</strong> (lois et règlements) relatifs au droit du travail. C'est un outil pratique qui rassemble les principaux textes. Les articles précédés d'une lettre L sont issus de lois, et ceux précédés de R ou D sont issus de textes réglementaires.</p>
+
+                        <h3 class="font-semibold text-lg mt-4">D. Jurisprudence :</h3>
+                        <p>La jurisprudence correspond à l'ensemble des décisions rendues par les tribunaux. Elle joue un rôle important en droit social en complétant, précisant et interprétant les textes légaux, notamment en cas de vide juridique ou de règles imprécises.</p>
+                        <p>Les juridictions intervenant en droit social sont nombreuses :</p>
+                        <ul class="list-disc list-inside ml-4">
+                            <li><strong>Conseil de prud'hommes :</strong> litiges individuels employeur/salarié (licenciement, salaires).</li>
+                            <li><strong>Tribunal d'instance :</strong> contentieux électoral.</li>
+                            <li><strong>Tribunal de grande instance :</strong> litiges collectifs (droit de grève).</li>
+                            <li><strong>Tribunal des affaires de sécurité sociale :</strong> litiges protection sociale.</li>
+                            <li><strong>Juridictions pénales :</strong> infractions au droit social (non-respect SMIC, harcèlement).</li>
+                            <li><strong>Tribunaux administratifs :</strong> recours contre décisions administratives (refus inspecteur du travail).</li>
+                        </ul>
+                    </div>
+                </details>
+                <div class="mini-quiz-area mt-6 p-4 rounded-lg" style="background-color: var(--accent-light-color);" id="mini-quiz-sources-nationales-etatiques">
+                    <h4 class="font-bold text-lg mb-4" style="color: var(--accent-dark-color);">Mini-Quiz : Sources Nationales Étatiques 📝</h4>
+                    <div id="mini-quiz-sources-nationales-etatiques-container"></div>
+                    <button class="validate-section-btn mt-4 py-2 px-4 text-white rounded-lg font-semibold hover:opacity-90 transition" style="background-color: var(--accent-dark-color);">Valider la Section ✅</button>
+                </div>
+            </section>
+
+            <section id="sources-professionnelles" class="learning-section mb-12 bg-white p-6 rounded-xl shadow-lg border-l-4 border-gray-300 section-locked">
+                <details class="cursor-pointer">
+                    <summary class="font-bold text-xl text-gray-800 flex items-center py-2">
+                        Sources Professionnelles du Droit Social 🤝
+                        <span class="ml-2 text-gray-500 text-sm font-normal" id="status-sources-professionnelles">(Verrouillée 🔒)</span>
+                    </summary>
+                    <div class="mt-4 text-gray-700 space-y-4">
+                        <p>À côté des règles imposées par les pouvoirs publics, il existe de nombreuses règles issues de la <strong>négociation collective</strong> entre les partenaires sociaux (employeurs/organisations patronales et syndicats de salariés). C'est pourquoi le droit social est un droit largement négocié.</p>
+
+                        <h3 class="font-semibold text-lg mt-4">A. Conventions et Accords Collectifs :</h3>
+                        <ul class="list-disc list-inside ml-4">
+                            <li>Les <strong>Conventions Collectives</strong> : Textes qui traitent de l'ensemble des conditions d'emploi, de travail, de formation professionnelle et des garanties sociales. Elles sont applicables à un secteur d'activité (convention de branche) et peuvent être conclues à différents niveaux géographiques (national, régional, local).</li>
+                            <li>Les <strong>Accords Collectifs</strong> : Textes qui traitent d'un point particulier des relations de travail (ex: aménagement du temps de travail, salaires). Ils peuvent être interprofessionnels, de branche, d'entreprise ou d'établissement.</li>
+                        </ul>
+                        <p class="italic mt-2"><strong>Rapports entre accords de différents niveaux :</strong> Depuis la loi du 4 mai 2004, il est possible de conclure des <strong>accords dérogatoires</strong> (moins favorables aux salariés) dans certains cas précis, sauf si le texte supérieur est impératif ou pour des questions fondamentales (salaire minimum, classifications professionnelles).</p>
+
+                        <h3 class="font-semibold text-lg mt-4">B. Usages Professionnels :</h3>
+                        <p>Ce sont des pratiques spontanées de l'employeur qui constituent un avantage pour les salariés. Pour devenir obligatoires, elles doivent présenter trois caractéristiques :</p>
+                        <ul class="list-disc list-inside ml-4">
+                            <li><strong>Généralité :</strong> avantage accordé à l'ensemble ou à une catégorie de salariés.</li>
+                            <li><strong>Fixité :</strong> modalités de l'avantage toujours les mêmes.</li>
+                            <li><strong>Constance :</strong> pratique régulière.</li>
+                        </ul>
+                        <p class="italic">L'employeur peut dénoncer un usage s'il informe personnellement chaque salarié, informe les représentants du personnel et respecte un délai de prévenance suffisant.</p>
+
+                        <h3 class="font-semibold text-lg mt-4">C. Engagement Unilatéral de l'Employeur :</h3>
+                        <p>Manifestation de volonté de l'employeur qui décide seul d'accorder un avantage aux salariés (ex: prime, jours de congés supplémentaires). Il peut être dénoncé dans les mêmes conditions que les usages.</p>
+
+                        <h3 class="font-semibold text-lg mt-4">D. Accords Atypiques :</h3>
+                        <p>Accords conclus entre l'employeur et les représentants du personnel (CE, DP) ou l'ensemble des salariés, sans intervention des syndicats représentatifs. Ils sont équivalents à un engagement unilatéral et peuvent être dénoncés dans les mêmes conditions.</p>
+                    </div>
+                </details>
+                <div class="mini-quiz-area mt-6 p-4 rounded-lg" style="background-color: var(--accent-light-color);" id="mini-quiz-sources-professionnelles">
+                    <h4 class="font-bold text-lg mb-4" style="color: var(--accent-dark-color);">Mini-Quiz : Sources Professionnelles 📝</h4>
+                    <div id="mini-quiz-sources-professionnelles-container"></div>
+                    <button class="validate-section-btn mt-4 py-2 px-4 text-white rounded-lg font-semibold hover:opacity-90 transition" style="background-color: var(--accent-dark-color);">Valider la Section ✅</button>
+                </div>
+            </section>
+
+            <section id="hierarchie-sources" class="learning-section mb-12 bg-white p-6 rounded-xl shadow-lg border-l-4 border-gray-300 section-locked">
+                <details class="cursor-pointer">
+                    <summary class="font-bold text-xl text-gray-800 flex items-center py-2">
+                        Hiérarchie des Sources du Droit Social 🪜
+                        <span class="ml-2 text-gray-500 text-sm font-normal" id="status-hierarchie-sources">(Verrouillée 🔒)</span>
+                    </summary>
+                    <div class="mt-4 text-gray-700 space-y-4">
+                        <h3 class="font-semibold text-lg">A. Présentation de la Hiérarchie Traditionnelle :</h3>
+                        <p>C'est la hiérarchie traditionnellement admise dans tous les domaines du droit, du plus élevé au moins élevé :</p>
+                        <ol class="list-decimal list-inside ml-4 space-y-1">
+                            <li>Textes de valeur constitutionnelle (Bloc de constitutionnalité)</li>
+                            <li>Conventions et traités internationaux ; Droit européen et communautaire</li>
+                            <li>Lois et ordonnances</li>
+                            <li>Règlements (décrets et arrêtés)</li>
+                            <li>Conventions et accords collectifs</li>
+                            <li>Usages professionnels et accords atypiques</li>
+                            <li>Engagements unilatéraux de l'employeur</li>
+                            <li>Règlement intérieur</li>
+                            <li>Contrat de travail</li>
+                        </ol>
+
+                        <h3 class="font-semibold text-lg mt-4">B. Principe de Légalité et ses Limites :</h3>
+                        <p>Le <strong>principe de légalité</strong> s'applique : aucune règle ne peut aller à l'encontre d'une règle de niveau supérieur. Chaque texte doit être conforme aux textes qui lui sont supérieurs dans la hiérarchie.</p>
+                        <p class="italic"><strong>Exemple :</strong> Un contrat de travail doit respecter la convention collective, qui doit être conforme aux lois, qui doivent respecter la Constitution et le droit européen.</p>
+
+                        <p class="mt-4">Cependant, le droit social étant un <strong>droit de protection des salariés</strong>, il existe des particularités :</p>
+                        <ul class="list-disc list-inside ml-4">
+                            <li><strong>Régime de faveur (Ordre public social) :</strong> Il est possible d'écarter la règle supérieure pour adopter des dispositions <strong>plus favorables</strong> aux salariés. C'est alors la source la plus favorable qui s'applique.
+                                <p class="italic">Exemple : Si la loi prévoit 5 semaines de congés payés, un accord de branche peut en prévoir 6, et un accord d'entreprise 7. C'est la disposition la plus favorable qui s'applique.</p>
+                            </li>
+                            <li><strong>Limite : Ordre public absolu :</strong> Certaines lois sont impératives et ne peuvent connaître aucune dérogation, même dans un sens plus favorable aux salariés (ex: interdiction d'indexer les salaires sur le SMIC).</li>
+                            <li><strong>Depuis 2004 (Ordre public conditionnel ou dérogatoire) :</strong> Possibilité de négocier des règles <strong>moins favorables</strong> aux salariés (accords dérogatoires) pour sauvegarder les intérêts de l'entreprise et l'emploi, mais uniquement dans des domaines limités (durée du travail, heures supplémentaires, aménagement du temps de travail).</li>
+                        </ul>
+                    </div>
+                </details>
+                <div class="mini-quiz-area mt-6 p-4 rounded-lg" style="background-color: var(--accent-light-color);" id="mini-quiz-hierarchie-sources">
+                    <h4 class="font-bold text-lg mb-4" style="color: var(--accent-dark-color);">Mini-Quiz : Hiérarchie des Sources 📝</h4>
+                    <div id="mini-quiz-hierarchie-sources-container"></div>
+                    <button class="validate-section-btn mt-4 py-2 px-4 text-white rounded-lg font-semibold hover:opacity-90 transition" style="background-color: var(--accent-dark-color);">Valider la Section ✅</button>
+                </div>
+            </section>
+
+            <section id="veille-sociale" class="learning-section mb-12 bg-white p-6 rounded-xl shadow-lg border-l-4 border-gray-300 section-locked">
+                <details class="cursor-pointer">
+                    <summary class="font-bold text-xl text-gray-800 flex items-center py-2">
+                        Conduite de la Veille Sociale 🔍
+                        <span class="ml-2 text-gray-500 text-sm font-normal" id="status-veille-sociale">(Verrouillée 🔒)</span>
+                    </summary>
+                    <div class="mt-4 text-gray-700 space-y-4">
+                        <h3 class="font-semibold text-lg">A. Préambule et Objectifs :</h3>
+                        <p>La <strong>veille sociale</strong> est une démarche d'anticipation et d'écoute des signaux informationnels, indispensable pour les entreprises. Elle correspond à une nécessité d'actualiser l'ensemble des informations sociales, contribuant au maintien d'une information récente et fiable. Elle permet d'éviter d'agir dans l'urgence et de traiter les relations sociales de l'entreprise dans les meilleures conditions.</p>
+
+                        <h3 class="font-semibold text-lg mt-4">B. Organisation de la Démarche de Veille Sociale :</h3>
+                        <p>La veille sociale repose sur deux actions fondamentales :</p>
+                        <ul class="list-disc list-inside ml-4">
+                            <li>La <strong>recherche et collecte d'informations</strong>.</li>
+                            <li>La <strong>vérification de la fiabilité de l'information et de sa source</strong>.</li>
+                        </ul>
+                        <h4 class="font-semibold text-md mt-2">1. Recherche et collecte d'informations :</h4>
+                        <p>Les sources d'informations sont diverses :</p>
+                        <ul class="list-disc list-inside ml-4">
+                            <li>Codes du travail, de la sécurité sociale (papier ou en ligne).</li>
+                            <li>Conventions collectives (papier ou en ligne).</li>
+                            <li>Ouvrages spécialisés (guides, mémentos).</li>
+                            <li>Sites spécialisés en informations juridiques (legifrance.gouv.fr, dsn-info.fr, etc.).</li>
+                            <li>Publications périodiques d'informations.</li>
+                        </ul>
+                        <p class="italic">Pour chaque information collectée, il convient de relever sa source et sa date de publication.</p>
+
+                        <h4 class="font-semibold text-md mt-2">2. Vérification de la fiabilité de l'information et de sa source :</h4>
+                        <p>La fiabilité repose sur la <strong>légitimité de la source</strong> et le <strong>caractère récent</strong> de l'information. Il est crucial de recentrer les recherches sur des sites officiels de l'État ou de la branche professionnelle et des professionnels du droit social.</p>
+                        <p class="italic">Les e-newsletters et sites spécialisés permettent de rester informé en temps réel.</p>
+
+                        <h3 class="font-semibold text-lg mt-4">Exemple d'Application : Règlement Intérieur 📝</h3>
+                        <p>L'entreprise Excelsior, avec 18 salariés, vient d'embaucher un nouveau salarié. Le chef d'entreprise vous demande les obligations en matière de règlement intérieur.</p>
+                        <p>Selon la veille sociale, le règlement intérieur est obligatoire dans les entreprises dont l'effectif est <strong>supérieur ou égal à 50 salariés</strong> (Article L1311-2 du Code du travail).</p>
+                        <p><strong>Réponse à l'employeur :</strong> Tant que le nombre de salariés n'est pas supérieur ou égal à 50, le règlement intérieur reste facultatif. Vous pourrez anticiper sa réalisation en amont de la cinquantième embauche.</p>
+                        <p class="italic mt-2">Le règlement intérieur est un document écrit fixant les mesures de santé/sécurité, les conditions de participation des salariés au rétablissement de ces conditions, et les règles disciplinaires. Il doit être affiché, déposé au greffe du conseil de prud'hommes, et transmis à l'inspecteur du travail.</p>
+                    </div>
+                </details>
+                <div class="mini-quiz-area mt-6 p-4 rounded-lg" style="background-color: var(--accent-light-color);" id="mini-quiz-veille-sociale">
+                    <h4 class="font-bold text-lg mb-4" style="color: var(--accent-dark-color);">Mini-Quiz : Veille Sociale 📝</h4>
+                    <div id="mini-quiz-veille-sociale-container"></div>
+                    <button class="validate-section-btn mt-4 py-2 px-4 text-white rounded-lg font-semibold hover:opacity-90 transition" style="background-color: var(--accent-dark-color);">Valider la Section ✅</button>
+                </div>
+            </section>
+
+            <section id="a-retenir" class="learning-section mb-12 bg-white p-6 rounded-xl shadow-lg border-l-4 border-gray-300 section-locked">
+                <details class="cursor-pointer">
+                    <summary class="font-bold text-xl text-gray-800 flex items-center py-2">
+                        À Retenir : Les Points Clés du Droit Social et de la Veille ✔️
+                        <span class="ml-2 text-gray-500 text-sm font-normal" id="status-a-retenir">(Verrouillée 🔒)</span>
+                    </summary>
+                    <div class="mt-4 text-gray-700 space-y-4">
+                        <h3 class="font-semibold text-lg">Notion de Droit Social :</h3>
+                        <ul class="list-disc list-inside ml-4">
+                            <li>Le droit social regroupe le <strong>droit du travail</strong> (relations employeurs/salariés) et le <strong>droit de la sécurité sociale</strong> (protection sociale).</li>
+                        </ul>
+
+                        <h3 class="font-semibold text-lg mt-4">Sources du Droit Social :</h3>
+                        <ul class="list-disc list-inside ml-4">
+                            <li><strong>Sources nationales étatiques :</strong> Textes constitutionnels, Lois, Règlements (décrets, ordonnances), Code du travail, Jurisprudence.</li>
+                            <li><strong>Sources professionnelles (droit négocié) :</strong> Conventions et accords collectifs (interprofessionnels, de branche, d'entreprise, d'établissement), Usages professionnels, Engagements unilatéraux de l'employeur, Accords atypiques.</li>
+                        </ul>
+
+                        <h3 class="font-semibold text-lg mt-4">Hiérarchie des Sources :</h3>
+                        <ul class="list-disc list-inside ml-4">
+                            <li>Principe de légalité : Un texte inférieur ne peut contredire un texte supérieur.</li>
+                            <li>Spécificité du droit social : Possibilité de déroger à la règle supérieure pour des dispositions <strong>plus favorables</strong> aux salariés (régime de faveur), sauf pour l'ordre public absolu.</li>
+                            <li>Depuis 2004 : Possibilité d'accords dérogatoires (moins favorables) dans des domaines limités pour l'emploi.</li>
+                        </ul>
+
+                        <h3 class="font-semibold text-lg mt-4">Veille Sociale :</h3>
+                        <ul class="list-disc list-inside ml-4">
+                            <li>Démarche d'anticipation pour <strong>actualiser les informations sociales</strong>.</li>
+                            <li>Actions clés : <strong>Recherche/collecte</strong> et <strong>vérification de la fiabilité</strong> (légitimité de la source, caractère récent).</li>
+                            <li>Importance de consulter les sites officiels et les professionnels du droit.</li>
+                        </ul>
+                    </div>
+                </details>
+                <div class="mini-quiz-area mt-6 p-4 rounded-lg" style="background-color: var(--accent-light-color);" id="mini-quiz-a-retenir">
+                    <h4 class="font-bold text-lg mb-4" style="color: var(--accent-dark-color);">Mini-Quiz : À Retenir 📝</h4>
+                    <div id="mini-quiz-a-retenir-container"></div>
+                    <button class="validate-section-btn mt-4 py-2 px-4 text-white rounded-lg font-semibold hover:opacity-90 transition" style="background-color: var(--accent-dark-color);">Valider la Section ✅</button>
+                </div>
+            </section>
+
+            <section id="final-quiz-section" class="mt-16 bg-white p-6 rounded-xl shadow-lg border-l-4 border-gray-300 section-locked">
+                <h2 class="text-2xl font-bold text-gray-800 text-center mb-8">Quiz Final sur le Droit Social et la Veille Sociale 🎓</h2>
+                <p class="mt-2 text-lg text-gray-600 text-center mb-8" id="final-quiz-intro">Mettez vos connaissances à l'épreuve ! Répondez aux questions et découvrez les <strong>justifications détaillées</strong> pour chaque bonne réponse, comme un vrai expert. 💡</p>
+                
+                <div id="quiz-container" class="hidden">
+                    <h3 id="quiz-question" class="text-xl font-semibold text-gray-800 mb-4"></h3>
+                    <div id="quiz-options" class="space-y-3 mb-6">
+                        <!-- Options will be dynamically loaded here -->
+                    </div>
+                    <div id="quiz-feedback" class="p-4 rounded-lg text-sm hidden">
+                        <!-- Feedback will be displayed here -->
+                    </div>
+                    <div class="mt-4 p-4 bg-gray-50 rounded-lg text-sm text-gray-700 hidden">
+                        <h4 class="font-bold mb-2">Explication Détaillée 🧐</h4>
+                        <p id="explanation-text"></p>
+                    </div>
+                    <div class="mt-6 flex justify-between">
+                        <button id="submit-answer" class="py-2 px-4 text-white rounded-lg font-semibold hover:opacity-90 transition" style="background-color: var(--accent-dark-color);">Valider la réponse ✅</button>
+                        <button id="next-question" class="py-2 px-4 bg-gray-300 text-gray-800 rounded-lg font-semibold hover:bg-gray-400 transition hidden">Question suivante ➡️</button>
+                    </div>
+                </div>
+                <div id="start-final-quiz-container" class="text-center">
+                    <button id="start-final-quiz-btn" class="py-3 px-6 text-white rounded-lg font-bold text-lg hover:opacity-90 transition" style="background-color: var(--accent-dark-color);">Démarrer le Quiz Final ! 🚀</button>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="bg-gradient-to-r from-gray-800 to-gray-700 mt-16" style="background-image: linear-gradient(to right, var(--header-start-color), var(--header-end-color));">
+        <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-200" style="color: var(--header-text-color);">
+            <p>Créé par Mathilde Martine PAISLEY L'Enervante, Enervante💪🏾</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Function to generate random colors
+            function getRandomColor() {
+                const colors = [
+                    { headerStart: '#4CAF50', headerEnd: '#8BC34A', headerText: '#DCEDC8', accentDark: '#4CAF50', accentLight: '#E8F5E9' }, // Green
+                    { headerStart: '#2196F3', headerEnd: '#03A9F4', headerText: '#BBDEFB', accentDark: '#2196F3', accentLight: '#E3F2FD' }, // Blue
+                    { headerStart: '#FF9800', headerEnd: '#FFB300', headerText: '#FFECB3', accentDark: '#FF9800', accentLight: '#FFF3E0' }, // Orange
+                    { headerStart: '#9C27B0', headerEnd: '#E040FB', headerText: '#F3E5F5', accentDark: '#9C27B0', accentLight: '#FCE4EC' }, // Purple
+                    { headerStart: '#009688', headerEnd: '#00BCD4', headerText: '#B2EBF2', accentDark: '#009688', accentLight: '#E0F2F7' }, // Teal
+                    { headerStart: '#F44336', headerEnd: '#E53935', headerText: '#FFCDD2', accentDark: '#F44336', accentLight: '#FFEBEE' }, // Red
+                    { headerStart: '#607D8B', headerEnd: '#78909C', headerText: '#CFD8DC', accentDark: '#607D8B', accentLight: '#ECEFF1' }  // Blue-gray
+                ];
+                return colors[Math.floor(Math.random() * colors.length)];
+            }
+
+            const chosenColors = getRandomColor();
+            document.documentElement.style.setProperty('--header-start-color', chosenColors.headerStart);
+            document.documentElement.style.setProperty('--header-end-color', chosenColors.headerEnd);
+            document.documentElement.style.setProperty('--header-text-color', chosenColors.headerText);
+            document.documentElement.style.setProperty('--accent-dark-color', chosenColors.accentDark);
+            document.documentElement.style.setProperty('--accent-light-color', chosenColors.accentLight);
+
+
+            // --- Global Quiz Data ---
+            const allQuizQuestions = {
+                "introduction": [
+                    {
+                        question: "Quel est l'objectif principal de ce module de formation ?",
+                        options: [
+                            "Apprendre à coder en HTML.",
+                            "Comprendre le droit social et la veille sociale.",
+                            "Réviser les règles de calcul numérique.",
+                            "Analyser des données financières complexes."
+                        ],
+                        correctAnswer: 1,
+                        explanation: "L'objectif principal de ce module est de vous aider à <strong>comprendre le droit social et la veille sociale en entreprise</strong>."
+                    },
+                    {
+                        question: "Vrai ou Faux : La veille sociale est une démarche de réaction plutôt que d'anticipation.",
+                        options: [
+                            "Vrai.",
+                            "Faux."
+                        ],
+                        correctAnswer: 1,
+                        explanation: "<strong>Faux</strong>. La veille sociale est une démarche d'anticipation et d'écoute des signaux informationnels."
+                    }
+                ],
+                "notion-droit-social": [
+                    {
+                        question: "Le droit social se compose de quelles deux branches ?",
+                        options: [
+                            "Droit civil et Droit pénal.",
+                            "Droit du travail et Droit commercial.",
+                            "Droit du travail et Droit de la sécurité sociale.",
+                            "Droit fiscal et Droit des sociétés."
+                        ],
+                        correctAnswer: 2,
+                        explanation: "Le droit social est une branche du droit autonome qui se compose du <strong>droit du travail</strong> et du <strong>droit de la sécurité sociale</strong>."
+                    },
+                    {
+                        question: "Quelle branche du droit réglemente les relations entre employeurs et salariés ?",
+                        options: [
+                            "Le droit de la sécurité sociale.",
+                            "Le droit commercial.",
+                            "Le droit du travail.",
+                            "Le droit civil."
+                        ],
+                        correctAnswer: 2,
+                        explanation: "C'est le <strong>droit du travail</strong> qui réglemente les relations entre employeurs et salariés, qu'il s'agisse des relations individuelles ou collectives."
+                    }
+                ],
+                "sources-nationales-etatiques": [
+                    {
+                        question: "Quel texte constitutionnel fait partie du bloc de constitutionnalité et contient des principes fondamentaux du droit français ?",
+                        options: [
+                            "Le Code du travail.",
+                            "La Déclaration des droits de l'homme et du citoyen.",
+                            "Le Code civil.",
+                            "Le Code de commerce."
+                        ],
+                        correctAnswer: 1,
+                        explanation: "La <strong>Déclaration des droits de l'homme et du citoyen</strong> (DDHC) du 26 août 1789 fait partie du bloc de constitutionnalité et contient des principes fondamentaux du droit français."
+                    },
+                    {
+                        question: "Quel type de texte est une compilation de règles se rapportant à une même branche du droit (ex: droit du travail) ?",
+                        options: [
+                            "Une loi.",
+                            "Un décret.",
+                            "Une ordonnance.",
+                            "Un code."
+                        ],
+                        correctAnswer: 3,
+                        explanation: "Un <strong>code</strong> (comme le Code du travail) est une compilation de textes se rapportant à une même branche du droit, servant d'outil pratique."
+                    },
+                    {
+                        question: "Quelle juridiction tranche les litiges individuels du travail opposant un salarié et son employeur ?",
+                        options: [
+                            "Le Tribunal de grande instance.",
+                            "Le Conseil de prud'hommes.",
+                            "Le Tribunal administratif.",
+                            "Le Tribunal des affaires de sécurité sociale."
+                        ],
+                        correctAnswer: 1,
+                        explanation: "Le <strong>Conseil de prud'hommes</strong> est la juridiction compétente pour trancher les litiges individuels du travail entre un salarié et son employeur."
+                    }
+                ],
+                "sources-professionnelles": [
+                    {
+                        question: "Comment appelle-t-on les textes qui traitent de l'ensemble des conditions d'emploi, de travail et de formation professionnelle dans un secteur d'activité ?",
+                        options: [
+                            "Accords d'entreprise.",
+                            "Règlements intérieurs.",
+                            "Conventions collectives.",
+                            "Engagements unilatéraux."
+                        ],
+                        correctAnswer: 2,
+                        explanation: "Ces textes sont les <strong>Conventions collectives</strong>, applicables généralement à un secteur d'activité (convention de branche)."
+                    },
+                    {
+                        question: "Vrai ou Faux : Un usage professionnel devient obligatoire s'il est général, fixe et constant.",
+                        options: [
+                            "Vrai.",
+                            "Faux."
+                        ],
+                        correctAnswer: 0,
+                        explanation: "<strong>Vrai</strong>. Pour qu'un usage professionnel prenne un caractère obligatoire et crée un droit pour les salariés, il doit être général, fixe et constant."
+                    },
+                    {
+                        question: "Depuis la loi du 4 mai 2004, est-il possible de conclure des accords dérogatoires (moins favorables aux salariés) ?",
+                        options: [
+                            "Oui, toujours.",
+                            "Non, jamais.",
+                            "Oui, dans certains cas précis et limités.",
+                            "Uniquement pour les salaires."
+                        ],
+                        correctAnswer: 2,
+                        explanation: "Depuis la loi du 4 mai 2004, il est possible de conclure des <strong>accords dérogatoires</strong> (moins favorables aux salariés) dans certains cas précis et limités, pour adapter les règles dans un objectif de sauvegarde de l'entreprise et de l'emploi."
+                    }
+                ],
+                "hierarchie-sources": [
+                    {
+                        question: "Dans la hiérarchie des sources du droit, quel est le niveau le plus élevé ?",
+                        options: [
+                            "Les lois et ordonnances.",
+                            "Les conventions collectives.",
+                            "Les textes de valeur constitutionnelle.",
+                            "Les règlements intérieurs."
+                        ],
+                        correctAnswer: 2,
+                        explanation: "Le niveau le plus élevé dans la hiérarchie des sources du droit est celui des <strong>textes de valeur constitutionnelle</strong> (le bloc de constitutionnalité)."
+                    },
+                    {
+                        question: "Selon le principe de légalité, un contrat de travail doit être conforme à :",
+                        options: [
+                            "Uniquement aux usages professionnels.",
+                            "Uniquement aux accords atypiques.",
+                            "L'ensemble des sources supérieures (lois, accords collectifs, etc.).",
+                            "Uniquement au règlement intérieur."
+                        ],
+                        correctAnswer: 2,
+                        explanation: "Selon le principe de légalité, un contrat de travail doit être conforme à <strong>l'ensemble des sources supérieures</strong> qui lui sont applicables, notamment les lois et les accords collectifs."
+                    },
+                    {
+                        question: "Vrai ou Faux : En droit social, il est toujours interdit d'écarter une règle légale, même si c'est pour adopter une disposition plus favorable aux salariés.",
+                        options: [
+                            "Vrai.",
+                            "Faux."
+                        ],
+                        correctAnswer: 1,
+                        explanation: "<strong>Faux</strong>. Le droit social est un droit de protection qui permet, dans le cadre du <strong>régime de faveur</strong>, d'écarter la règle légale pour adopter des dispositions plus favorables aux salariés, sauf pour les règles d'ordre public absolu."
+                    }
+                ],
+                "veille-sociale": [
+                    {
+                        question: "Quel est l'objectif principal de la démarche de veille sociale ?",
+                        options: [
+                            "Générer des profits pour l'entreprise.",
+                            "Actualiser l'ensemble des informations sociales et anticiper les évolutions.",
+                            "Gérer les conflits entre salariés.",
+                            "Organiser les événements d'entreprise."
+                        ],
+                        correctAnswer: 1,
+                        explanation: "L'objectif principal de la veille sociale est d'<strong>actualiser l'ensemble des informations sociales</strong> et d'adopter une démarche d'anticipation pour éviter d'agir dans l'urgence."
+                    },
+                    {
+                        question: "La fiabilité d'une information en veille sociale repose sur :",
+                        options: [
+                            "Sa longueur et sa complexité.",
+                            "La légitimité de sa source et son caractère récent.",
+                            "Le nombre de fois où elle est partagée.",
+                            "Son coût d'acquisition."
+                        ],
+                        correctAnswer: 1,
+                        explanation: "La fiabilité de l'information en veille sociale repose sur la <strong>légitimité de sa source et son caractère récent</strong>."
+                    },
+                    {
+                        question: "Vrai ou Faux : Le règlement intérieur est obligatoire pour toutes les entreprises, quelle que soit leur taille.",
+                        options: [
+                            "Vrai.",
+                            "Faux."
+                        ],
+                        correctAnswer: 1,
+                        explanation: "<strong>Faux</strong>. Le règlement intérieur est obligatoire dans les entreprises dont l'effectif est <strong>supérieur ou égal à 50 salariés</strong>."
+                    }
+                ],
+                "a-retenir": [
+                    {
+                        question: "Le droit social est une branche du droit qui regroupe :",
+                        options: [
+                            "Le droit civil et le droit pénal.",
+                            "Le droit du travail et le droit commercial.",
+                            "Le droit du travail et le droit de la sécurité sociale.",
+                            "Le droit fiscal et le droit des sociétés."
+                        ],
+                        correctAnswer: 2,
+                        explanation: "Le droit social regroupe le <strong>droit du travail</strong> et le <strong>droit de la sécurité sociale</strong>."
+                    },
+                    {
+                        question: "Quelle est la principale caractéristique de la hiérarchie des sources du droit social ?",
+                        options: [
+                            "Uniquement les lois s'appliquent.",
+                            "Les textes inférieurs priment toujours sur les supérieurs.",
+                            "Un texte inférieur ne peut contredire un texte supérieur, mais des dérogations plus favorables sont possibles.",
+                            "Il n'y a pas de hiérarchie dans le droit social."
+                        ],
+                        correctAnswer: 2,
+                        explanation: "La hiérarchie des sources du droit social suit le principe de légalité, mais permet des dérogations pour des dispositions <strong>plus favorables</strong> aux salariés (régime de faveur)."
+                    }
+                ],
+                "final-quiz": [ 
+                    {
+                        question: "La notion de droit social se compose de :",
+                        options: [
+                            "Droit civil et Droit pénal.",
+                            "Droit du travail et Droit de la sécurité sociale.",
+                            "Droit commercial et Droit fiscal.",
+                            "Droit administratif et Droit constitutionnel."
+                        ],
+                        correctAnswer: 1,
+                        explanation: "Le droit social est une branche du droit autonome qui se compose du <strong>droit du travail</strong> et du <strong>droit de la sécurité sociale</strong>."
+                    },
+                    {
+                        question: "Parmi les sources nationales étatiques, laquelle est une compilation de textes relatifs à une branche du droit ?",
+                        options: [
+                            "Une loi.",
+                            "Une ordonnance.",
+                            "Un code.",
+                            "La jurisprudence."
+                        ],
+                        correctAnswer: 2,
+                        explanation: "Un <strong>code</strong> (comme le Code du travail) est une compilation de textes se rapportant à une même branche du droit, servant d'outil pratique."
+                    },
+                    {
+                        question: "Comment appelle-t-on les règles issues de la négociation collective entre employeurs et syndicats de salariés ?",
+                        options: [
+                            "Règlements intérieurs.",
+                            "Engagements unilatéraux.",
+                            "Accords atypiques.",
+                            "Conventions et accords collectifs."
+                        ],
+                        correctAnswer: 3,
+                        explanation: "Les règles issues de la négociation collective sont les <strong>conventions et accords collectifs</strong>."
+                    },
+                    {
+                        question: "Quel est le principe fondamental qui stipule qu'aucune règle ne peut aller à l'encontre d'une règle de niveau supérieur ?",
+                        options: [
+                            "Le principe de faveur.",
+                            "Le principe d'autonomie.",
+                            "Le principe de légalité.",
+                            "Le principe de subsidiarité."
+                        ],
+                        correctAnswer: 2,
+                        explanation: "C'est le <strong>principe de légalité</strong> qui s'applique dans la hiérarchie des sources du droit, signifiant qu'un texte inférieur ne peut contredire un texte supérieur."
+                    },
+                    {
+                        question: "Une entreprise compte 18 salariés. Le règlement intérieur est-il obligatoire ?",
+                        options: [
+                            "Oui, toujours.",
+                            "Non, car l'effectif est inférieur à 50 salariés.",
+                            "Oui, si l'entreprise le décide.",
+                            "Uniquement si l'entreprise a des représentants du personnel."
+                        ],
+                        correctAnswer: 1,
+                        explanation: "Le règlement intérieur est obligatoire dans les entreprises dont l'effectif est <strong>supérieur ou égal à 50 salariés</strong>. Pour une entreprise de 18 salariés, il est donc facultatif."
+                    },
+                    {
+                        question: "La fiabilité d'une information en veille sociale repose principalement sur :",
+                        options: [
+                            "Sa longueur et sa complexité.",
+                            "La légitimité de sa source et son caractère récent.",
+                            "Le fait qu'elle soit gratuite.",
+                            "Le nombre de fois où elle est publiée."
+                        ],
+                        correctAnswer: 1,
+                        explanation: "La fiabilité de l'information en veille sociale repose sur la <strong>légitimité de sa source et son caractère récent</strong>."
+                    }
+                ]
+            };
+
+            // --- Learning Section State ---
+            // Define all sections and their order
+            let currentLearningSectionId = 'introduction'; 
+            const sectionOrder = [
+                'introduction',
+                'notion-droit-social',
+                'sources-nationales-etatiques',
+                'sources-professionnelles',
+                'hierarchie-sources',
+                'veille-sociale',
+                'a-retenir'
+            ];
+            const sectionCompletion = {
+                "introduction": false,
+                "notion-droit-social": false,
+                "sources-nationales-etatiques": false,
+                "sources-professionnelles": false,
+                "hierarchie-sources": false,
+                "veille-sociale": false,
+                "a-retenir": false
+            };
+
+            // --- Mini-Quiz State ---
+            let currentActiveQuizType = null; 
+            let currentQuizQuestionIndex = 0;
+            let miniQuizCorrectAnswersCount = 0;
+            let currentQuizQuestionsSet = []; 
+
+            // --- UI Elements ---
+            const learningSections = document.querySelectorAll('.learning-section');
+            const quizContainer = document.getElementById('quiz-container');
+            const quizQuestionElement = document.getElementById('quiz-question');
+            const quizOptionsElement = document.getElementById('quiz-options');
+            const quizFeedbackElement = document.getElementById('quiz-feedback');
+            const quizExplanationElement = document.getElementById('explanation-text'); 
+            const explanationTextElement = document.getElementById('explanation-text');
+            const submitButton = document.getElementById('submit-answer');
+            const nextButton = document.getElementById('next-question');
+            const startFinalQuizBtn = document.getElementById('start-final-quiz-btn');
+            const finalQuizSection = document.getElementById('final-quiz-section');
+            const finalQuizIntro = document.getElementById('final-quiz-intro');
+
+            // --- Progress Bar Elements ---
+            const dotIntroduction = document.getElementById('dot-introduction');
+            const dotNotionDroitSocial = document.getElementById('dot-notion-droit-social');
+            const dotSourcesNationalesEtatiques = document.getElementById('dot-sources-nationales-etatiques');
+            const dotSourcesProfessionnelles = document.getElementById('dot-sources-professionnelles');
+            const dotHierarchieSources = document.getElementById('dot-hierarchie-sources');
+            const dotVeilleSociale = document.getElementById('dot-veille-sociale');
+            const dotARetenir = document.getElementById('dot-a-retenir');
+            const dotFinalQuiz = document.getElementById('dot-final-quiz');
+
+            const lineIntroduction = document.getElementById('line-introduction');
+            const lineNotionDroitSocial = document.getElementById('line-notion-droit-social');
+            const lineSourcesNationalesEtatiques = document.getElementById('line-sources-nationales-etatiques');
+            const lineSourcesProfessionnelles = document.getElementById('line-sources-professionnelles');
+            const lineHierarchieSources = document.getElementById('line-hierarchie-sources');
+            const lineVeilleSociale = document.getElementById('line-veille-sociale');
+            const lineARetenir = document.getElementById('line-a-retenir');
+
+            const progressDots = {
+                "introduction": dotIntroduction,
+                "notion-droit-social": dotNotionDroitSocial,
+                "sources-nationales-etatiques": dotSourcesNationalesEtatiques,
+                "sources-professionnelles": dotSourcesProfessionnelles,
+                "hierarchie-sources": dotHierarchieSources,
+                "veille-sociale": dotVeilleSociale,
+                "a-retenir": dotARetenir,
+                "final-quiz": dotFinalQuiz
+            };
+            const progressLines = {
+                "introduction": lineIntroduction,
+                "notion-droit-social": lineNotionDroitSocial,
+                "sources-nationales-etatiques": lineSourcesNationalesEtatiques,
+                "sources-professionnelles": lineSourcesProfessionnelles,
+                "hierarchie-sources": lineHierarchieSources,
+                "veille-sociale": lineVeilleSociale,
+                "a-retenir": lineARetenir
+            };
+
+
+            // --- Functions ---
+
+            function updateProgressBar() {
+                sectionOrder.forEach((sectionId, index) => {
+                    const dot = progressDots[sectionId];
+                    const line = progressLines[sectionId]; // Line *after* the dot
+
+                    if (sectionCompletion[sectionId]) {
+                        dot.classList.add('completed');
+                        dot.classList.remove('active');
+                        if (line) line.classList.add('completed');
+                    } else if (sectionId === currentLearningSectionId) {
+                        dot.classList.add('active');
+                        dot.classList.remove('completed');
+                    } else {
+                        dot.classList.remove('active', 'completed');
+                        if (line) line.classList.remove('completed');
+                    }
+                });
+
+                // Final quiz dot
+                const allSectionsCompleted = sectionOrder.every(id => sectionCompletion[id]);
+                if (allSectionsCompleted) {
+                    progressDots["final-quiz"].classList.add('active'); // Indicate it's ready
+                } else {
+                    progressDots["final-quiz"].classList.remove('active');
+                }
+            }
+
+            function updateLearningSectionStates() {
+                learningSections.forEach(section => {
+                    const sectionId = section.id;
+                    const summarySpan = section.querySelector('summary span');
+                    const validateBtn = section.querySelector('.validate-section-btn');
+                    const miniQuizArea = section.querySelector('.mini-quiz-area');
+                    const detailsElement = section.querySelector('details');
+
+                    if (sectionId === currentLearningSectionId) {
+                        section.classList.remove('section-locked');
+                        section.style.borderColor = 'var(--accent-dark-color)';
+                        if (summarySpan) summarySpan.style.color = 'var(--accent-dark-color)';
+                        if (miniQuizArea) miniQuizArea.classList.remove('hidden');
+                        if (detailsElement) detailsElement.open = true; // Open active section
+                        if (validateBtn) validateBtn.classList.add('hidden'); // Hide until mini-quiz is passed
+
+                        // Automatically start mini-quiz for the active section if not completed
+                        if (!sectionCompletion[sectionId] && allQuizQuestions[sectionId] && allQuizQuestions[sectionId].length > 0) {
+                            startMiniQuiz(sectionId);
+                        } else if (sectionCompletion[sectionId]) {
+                            // If somehow active but already completed, hide quiz area
+                            if (miniQuizArea) miniQuizArea.classList.add('hidden');
+                        }
+
+                    } else if (sectionCompletion[sectionId]) {
+                        section.classList.remove('section-locked');
+                        section.style.borderColor = '#388E3C'; /* Dark green for completed */
+                        if (summarySpan) summarySpan.style.color = '#388E3C';
+                        if (miniQuizArea) miniQuizArea.classList.add('hidden');
+                        if (validateBtn) validateBtn.classList.add('hidden');
+                        if (detailsElement) detailsElement.open = false; // Close completed section
+                    } else {
+                        section.classList.add('section-locked');
+                        section.style.borderColor = '#CBD5E0'; /* Gray for locked */
+                        if (summarySpan) summarySpan.style.color = '#607D8B';
+                        if (miniQuizArea) miniQuizArea.classList.add('hidden');
+                        if (validateBtn) validateBtn.classList.add('hidden');
+                        if (detailsElement) detailsElement.open = false; // Keep locked sections closed
+                    }
+                });
+
+                // Check if final quiz should be unlocked
+                const allSectionsCompleted = sectionOrder.every(id => sectionCompletion[id]);
+                if (allSectionsCompleted) {
+                    finalQuizSection.classList.remove('section-locked');
+                    finalQuizSection.style.borderColor = 'var(--accent-dark-color)';
+                    finalQuizIntro.textContent = "Félicitations ! Toutes les sections ont été validées. Vous êtes prêt pour le Quiz Final ! 🎉";
+                    startFinalQuizBtn.classList.remove('hidden');
+                } else {
+                    finalQuizSection.classList.add('section-locked');
+                    finalQuizSection.style.borderColor = '#CBD5E0'; /* Gray for locked */
+                    finalQuizIntro.textContent = "Validez toutes les sections précédentes pour débloquer le Quiz Final. 💡";
+                    startFinalQuizBtn.classList.add('hidden');
+                }
+
+                updateProgressBar();
+            }
+
+            function loadQuizQuestion(quizSet, containerElementId) {
+                currentQuizQuestionsSet = quizSet;
+                const questionData = currentQuizQuestionsSet[currentQuizQuestionIndex];
+                const container = document.getElementById(containerElementId);
+
+                container.innerHTML = `
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">${questionData.question}</h3>
+                    <div class="space-y-3 mb-6" id="${containerElementId}-options"></div>
+                    <div class="p-4 rounded-lg text-sm hidden" id="${containerElementId}-feedback"></div>
+                    <div class="mt-4 p-4 bg-gray-50 rounded-lg text-sm text-gray-700 hidden" id="${containerElementId}-explanation">
+                        <h4 class="font-bold mb-2">Explication Détaillée 🧐</h4>
+                        <p id="${containerElementId}-explanation-text"></p>
+                    </div>
+                    <div class="mt-6 flex justify-between">
+                        <button class="submit-quiz-answer-btn py-2 px-4 text-white rounded-lg font-semibold hover:opacity-90 transition" style="background-color: var(--accent-dark-color);">Valider la réponse ✅</button>
+                        <button class="next-quiz-question-btn py-2 px-4 bg-gray-300 text-gray-800 rounded-lg font-semibold hover:bg-gray-400 transition hidden">Question suivante ➡️</button>
+                    </div>
+                `;
+
+                const optionsContainer = document.getElementById(`${containerElementId}-options`);
+                questionData.options.forEach((option, index) => {
+                    const div = document.createElement('div');
+                    div.className = 'quiz-option';
+                    div.innerHTML = `
+                        <input type="radio" id="${containerElementId}-option${index}" name="${containerElementId}-answer" value="${index}" class="hidden">
+                        <label for="${containerElementId}-option${index}" class="block p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-100 transition">${option}</label>
+                    `;
+                    optionsContainer.appendChild(div);
+                });
+
+                // Attach event listeners for the new buttons
+                container.querySelector('.submit-quiz-answer-btn').addEventListener('click', () => submitQuizAnswer(containerElementId));
+                container.querySelector('.next-quiz-question-btn').addEventListener('click', () => nextQuizQuestion(containerElementId));
+            }
+
+            function submitQuizAnswer(containerElementId) {
+                const container = document.getElementById(containerElementId);
+                const selectedOption = container.querySelector(`input[name="${containerElementId}-answer"]:checked`);
+                const feedbackElement = container.querySelector(`#${containerElementId}-feedback`);
+                const explanationElement = container.querySelector(`#${containerElementId}-explanation`);
+                const explanationText = container.querySelector(`#${containerElementId}-explanation-text`);
+                const submitBtn = container.querySelector('.submit-quiz-answer-btn');
+                const nextBtn = container.querySelector('.next-quiz-question-btn');
+
+                if (!selectedOption) {
+                    feedbackElement.textContent = "Veuillez sélectionner une réponse.";
+                    feedbackElement.className = 'p-4 rounded-lg text-sm bg-yellow-100 text-yellow-800';
+                    feedbackElement.classList.remove('hidden');
+                    return;
+                }
+
+                const selectedAnswerIndex = parseInt(selectedOption.value);
+                const questionData = currentQuizQuestionsSet[currentQuizQuestionIndex];
+
+                container.querySelectorAll(`input[name="${containerElementId}-answer"]`).forEach(radio => radio.disabled = true);
+
+                let isCorrect;
+                if (Array.isArray(questionData.correctAnswer)) {
+                    const selectedOptions = Array.from(container.querySelectorAll(`input[name="${containerElementId}-answer"]:checked`)).map(input => parseInt(input.value));
+                    isCorrect = questionData.correctAnswer.length === selectedOptions.length &&
+                                questionData.correctAnswer.every(val => selectedOptions.includes(val));
+                } else {
+                    isCorrect = (selectedAnswerIndex === questionData.correctAnswer);
+                }
+
+                if (isCorrect) {
+                    feedbackElement.textContent = "Correct ! 🎉";
+                    feedbackElement.className = 'quiz-feedback correct p-4 rounded-lg text-sm';
+                    miniQuizCorrectAnswersCount++;
+                } else {
+                    feedbackElement.textContent = `Incorrect. La bonne réponse était : "${Array.isArray(questionData.correctAnswer) ? questionData.correctAnswer.map(idx => questionData.options[idx]).join(', ') : questionData.options[questionData.correctAnswer]}". 😔`;
+                    feedbackElement.className = 'quiz-feedback incorrect p-4 rounded-lg text-sm';
+                }
+                feedbackElement.classList.remove('hidden');
+
+                explanationText.innerHTML = questionData.explanation;
+                explanationElement.classList.remove('hidden');
+                
+                submitBtn.classList.add('hidden');
+                nextBtn.classList.remove('hidden');
+            }
+
+            function nextQuizQuestion(containerElementId) {
+                currentQuizQuestionIndex++;
+                if (currentQuizQuestionIndex < currentQuizQuestionsSet.length) {
+                    loadQuizQuestion(currentQuizQuestionsSet, containerElementId);
+                } else {
+                    // Mini-quiz finished
+                    const currentSectionId = currentActiveQuizType; 
+                    const totalQuestions = allQuizQuestions[currentSectionId].length;
+                    
+                    if (miniQuizCorrectAnswersCount === totalQuestions) {
+                        // All correct, enable validate button
+                        document.querySelector(`#${currentSectionId} .validate-section-btn`).classList.remove('hidden');
+                        document.getElementById(containerElementId).innerHTML = `<p class="text-green-700 font-semibold">Mini-quiz réussi à 100% ! Vous pouvez valider cette section. ✅</p>`;
+                    } else {
+                        // Not all correct, ask to retry
+                        document.getElementById(containerElementId).innerHTML = `
+                            <p class="text-red-700 font-semibold mb-4">Mini-quiz non réussi (${miniQuizCorrectAnswersCount}/${totalQuestions} bonnes réponses). Veuillez réessayer pour valider la section. 😔</p>
+                            <button class="retry-mini-quiz-btn py-2 px-4 bg-red-600 text-white rounded-lg font-semibold hover:bg-red-700 transition" data-section="${currentSectionId}">Réessayer le Mini-Quiz 🔄</button>
+                        `;
+                        document.getElementById(containerElementId).querySelector('.retry-mini-quiz-btn').addEventListener('click', (e) => {
+                            startMiniQuiz(e.target.dataset.section);
+                        });
+                    }
+                    currentActiveQuizType = null; // Reset active quiz type
+                    currentQuizQuestionIndex = 0; // Reset for next quiz
+                    miniQuizCorrectAnswersCount = 0; // Reset for next quiz
+                }
+            }
+
+            function startMiniQuiz(sectionId) {
+                currentActiveQuizType = sectionId;
+                currentQuizQuestionIndex = 0;
+                miniQuizCorrectAnswersCount = 0;
+
+                // Hide learning content, show mini-quiz area
+                const detailsElement = document.querySelector(`#${sectionId} details`);
+                if (detailsElement) detailsElement.open = false; // Close content
+                const miniQuizArea = document.querySelector(`#${sectionId} .mini-quiz-area`);
+                if (miniQuizArea) miniQuizArea.classList.remove('hidden');
+                
+                loadQuizQuestion(allQuizQuestions[sectionId], `mini-quiz-${sectionId}-container`);
+            }
+
+            function validateSection(sectionId) {
+                sectionCompletion[sectionId] = true;
+                const sectionIndex = sectionOrder.indexOf(sectionId);
+                
+                // Hide mini-quiz area and validate button
+                const miniQuizArea = document.querySelector(`#${sectionId} .mini-quiz-area`);
+                if (miniQuizArea) miniQuizArea.classList.add('hidden');
+                const validateBtn = document.querySelector(`#${sectionId} .validate-section-btn`);
+                if (validateBtn) validateBtn.classList.add('hidden');
+
+                updateLearningSectionStates(); // Update UI for current and next sections
+
+                // Unlock next section if exists
+                if (sectionIndex < sectionOrder.length - 1) {
+                    currentLearningSectionId = sectionOrder[sectionIndex + 1];
+                    updateLearningSectionStates(); // Re-run to unlock the next one
+                    // Open the newly unlocked section's details
+                    const nextSectionDetails = document.querySelector(`#${currentLearningSectionId} details`);
+                    if (nextSectionDetails) nextSectionDetails.open = true;
+                }
+            }
+
+            function startFinalQuiz() {
+                currentActiveQuizType = 'final-quiz'; 
+                currentQuizQuestionIndex = 0;
+                miniQuizCorrectAnswersCount = 0; 
+
+                finalQuizIntro.classList.add('hidden');
+                startFinalQuizBtn.classList.add('hidden');
+                quizContainer.classList.remove('hidden');
+
+                loadQuizQuestion(allQuizQuestions["final-quiz"], 'quiz-container'); 
+            }
+
+
+            // --- Event Listeners ---
+
+            // Initial setup for learning sections
+            updateLearningSectionStates();
+
+            // Start mini-quiz for the first section on load
+            if (currentLearningSectionId === 'introduction') {
+                startMiniQuiz('introduction');
+            }
+            
+            // Attach listeners to "Valider la Section" buttons
+            document.querySelectorAll('.validate-section-btn').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    validateSection(e.target.dataset.section);
+                });
+            });
+
+            // Attach listener for the final quiz start button
+            startFinalQuizBtn.addEventListener('click', startFinalQuiz);
+
+        });
+    </script>
+</body>
+</html>
