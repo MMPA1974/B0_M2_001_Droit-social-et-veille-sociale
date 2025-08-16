@@ -26,8 +26,10 @@
             color: #333333; /* Dark gray text */
         }
         .quiz-option input[type="radio"]:checked + label {
-            background-color: var(--accent-light-color);
+            background-color: var(--accent-dark-color); /* Couleur foncée pour la sélection */
+            color: #FFFFFF; /* Texte blanc pour le contraste */
             border-color: var(--accent-dark-color);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Ombre pour la profondeur */
         }
         .quiz-option label {
             transition: all 0.2s ease;
@@ -114,7 +116,8 @@
                 <div class="mini-quiz-area mt-6 p-4 rounded-lg" style="background-color: var(--accent-light-color);" id="mini-quiz-introduction">
                     <h4 class="font-bold text-lg mb-4" style="color: var(--accent-dark-color);">Mini-Quiz : Introduction 📝</h4>
                     <div id="mini-quiz-introduction-container"></div>
-                    <button class="validate-section-btn mt-4 py-2 px-4 text-white rounded-lg font-semibold hover:opacity-90 transition" style="background-color: var(--accent-dark-color);" data-section="introduction">Valider la Section ✅</button>
+                    <!-- Le bouton Valider la Section est caché par défaut dans le HTML et n'apparaît que via JS -->
+                    <button class="validate-section-btn mt-4 py-2 px-4 text-white rounded-lg font-semibold hover:opacity-90 transition hidden" style="background-color: var(--accent-dark-color);" data-section="introduction">Valider la Section ✅</button>
                 </div>
             </section>
 
@@ -172,7 +175,7 @@
                 <div class="mini-quiz-area mt-6 p-4 rounded-lg" style="background-color: var(--accent-light-color);" id="mini-quiz-notion-droit-social">
                     <h4 class="font-bold text-lg mb-4" style="color: var(--accent-dark-color);">Mini-Quiz : Notion de Droit Social 📝</h4>
                     <div id="mini-quiz-notion-droit-social-container"></div>
-                    <button class="validate-section-btn mt-4 py-2 px-4 text-white rounded-lg font-semibold hover:opacity-90 transition" style="background-color: var(--accent-dark-color);" data-section="notion-droit-social">Valider la Section ✅</button>
+                    <button class="validate-section-btn mt-4 py-2 px-4 text-white rounded-lg font-semibold hover:opacity-90 transition hidden" style="background-color: var(--accent-dark-color);" data-section="notion-droit-social">Valider la Section ✅</button>
                 </div>
             </section>
 
@@ -184,7 +187,7 @@
                     </summary>
                     <div class="mt-4 text-gray-700 space-y-4">
                         <h3 class="font-semibold text-lg">A. Textes Constitutionnels :</h3>
-                        <p>Le bloc de constitutionnalité (Constitution de 1958, Déclaration des droits de l'homme et du citoyen, Préambule de la Constitution de 1946) contient les <strong>principes fondamentaux du droit français</strong>, y compris les droits sociaux fondamentaux comme la liberté du travail, la liberté syndicale, le droit de grève, le droit à la négociation collective et le droit à la protection sociale.</p>
+                        <p>Le bloc de constitutionnalité (Constitution de 1958, Déclaration des droits de l'homme et du citoyen, Préambule de la Constitution de 1946) contient les <strong>principaux fondamentaux du droit français</strong>, y compris les droits sociaux fondamentaux comme la liberté du travail, la liberté syndicale, le droit de grève, le droit à la négociation collective et le droit à la protection sociale.</p>
 
                         <h3 class="font-semibold text-lg mt-4">B. Lois, Règlements et Ordonnances :</h3>
                         <p>Le droit social est une matière partagée entre le Parlement (lois) et le Gouvernement (règlements).</p>
@@ -213,7 +216,7 @@
                 <div class="mini-quiz-area mt-6 p-4 rounded-lg" style="background-color: var(--accent-light-color);" id="mini-quiz-sources-nationales-etatiques">
                     <h4 class="font-bold text-lg mb-4" style="color: var(--accent-dark-color);">Mini-Quiz : Sources Nationales Étatiques 📝</h4>
                     <div id="mini-quiz-sources-nationales-etatiques-container"></div>
-                    <button class="validate-section-btn mt-4 py-2 px-4 text-white rounded-lg font-semibold hover:opacity-90 transition" style="background-color: var(--accent-dark-color);" data-section="sources-nationales-etatiques">Valider la Section ✅</button>
+                    <button class="validate-section-btn mt-4 py-2 px-4 text-white rounded-lg font-semibold hover:opacity-90 transition hidden" style="background-color: var(--accent-dark-color);" data-section="sources-nationales-etatiques">Valider la Section ✅</button>
                 </div>
             </section>
 
@@ -252,7 +255,7 @@
                 <div class="mini-quiz-area mt-6 p-4 rounded-lg" style="background-color: var(--accent-light-color);" id="mini-quiz-sources-professionnelles">
                     <h4 class="font-bold text-lg mb-4" style="color: var(--accent-dark-color);">Mini-Quiz : Sources Professionnelles 📝</h4>
                     <div id="mini-quiz-sources-professionnelles-container"></div>
-                    <button class="validate-section-btn mt-4 py-2 px-4 text-white rounded-lg font-semibold hover:opacity-90 transition" style="background-color: var(--accent-dark-color);" data-section="sources-professionnelles">Valider la Section ✅</button>
+                    <button class="validate-section-btn mt-4 py-2 px-4 text-white rounded-lg font-semibold hover:opacity-90 transition hidden" style="background-color: var(--accent-dark-color);" data-section="sources-professionnelles">Valider la Section ✅</button>
                 </div>
             </section>
 
@@ -294,7 +297,7 @@
                 <div class="mini-quiz-area mt-6 p-4 rounded-lg" style="background-color: var(--accent-light-color);" id="mini-quiz-hierarchie-sources">
                     <h4 class="font-bold text-lg mb-4" style="color: var(--accent-dark-color);">Mini-Quiz : Hiérarchie des Sources 📝</h4>
                     <div id="mini-quiz-hierarchie-sources-container"></div>
-                    <button class="validate-section-btn mt-4 py-2 px-4 text-white rounded-lg font-semibold hover:opacity-90 transition" style="background-color: var(--accent-dark-color);" data-section="hierarchie-sources">Valider la Section ✅</button>
+                    <button class="validate-section-btn mt-4 py-2 px-4 text-white rounded-lg font-semibold hover:opacity-90 transition hidden" style="background-color: var(--accent-dark-color);" data-section="hierarchie-sources">Valider la Section ✅</button>
                 </div>
             </section>
 
@@ -339,7 +342,7 @@
                 <div class="mini-quiz-area mt-6 p-4 rounded-lg" style="background-color: var(--accent-light-color);" id="mini-quiz-veille-sociale">
                     <h4 class="font-bold text-lg mb-4" style="color: var(--accent-dark-color);">Mini-Quiz : Veille Sociale 📝</h4>
                     <div id="mini-quiz-veille-sociale-container"></div>
-                    <button class="validate-section-btn mt-4 py-2 px-4 text-white rounded-lg font-semibold hover:opacity-90 transition" style="background-color: var(--accent-dark-color);" data-section="veille-sociale">Valider la Section ✅</button>
+                    <button class="validate-section-btn mt-4 py-2 px-4 text-white rounded-lg font-semibold hover:opacity-90 transition hidden" style="background-color: var(--accent-dark-color);" data-section="veille-sociale">Valider la Section ✅</button>
                 </div>
             </section>
 
@@ -379,7 +382,7 @@
                 <div class="mini-quiz-area mt-6 p-4 rounded-lg" style="background-color: var(--accent-light-color);" id="mini-quiz-a-retenir">
                     <h4 class="font-bold text-lg mb-4" style="color: var(--accent-dark-color);">Mini-Quiz : À Retenir 📝</h4>
                     <div id="mini-quiz-a-retenir-container"></div>
-                    <button class="validate-section-btn mt-4 py-2 px-4 text-white rounded-lg font-semibold hover:opacity-90 transition" style="background-color: var(--accent-dark-color);" data-section="a-retenir">Valider la Section ✅</button>
+                    <button class="validate-section-btn mt-4 py-2 px-4 text-white rounded-lg font-semibold hover:opacity-90 transition hidden" style="background-color: var(--accent-dark-color);" data-section="a-retenir">Valider la Section ✅</button>
                 </div>
             </section>
 
@@ -843,7 +846,8 @@
                         if (summarySpan) summarySpan.style.color = 'var(--accent-dark-color)';
                         if (miniQuizArea) miniQuizArea.classList.remove('hidden');
                         if (detailsElement) detailsElement.open = true; // Open active section
-                        if (validateBtn) validateBtn.classList.add('hidden'); // Hide until mini-quiz is passed
+                        // validateBtn is hidden by default in HTML, so no need to hide it here initially.
+                        // It will be shown only when mini-quiz is 100% correct.
 
                         // Automatically start mini-quiz for the active section if not completed
                         if (!sectionCompletion[sectionId] && allQuizQuestions[sectionId] && allQuizQuestions[sectionId].length > 0) {
@@ -859,14 +863,14 @@
                         section.style.borderColor = '#388E3C'; /* Dark green for completed */
                         if (summarySpan) summarySpan.style.color = '#388E3C';
                         if (miniQuizArea) miniQuizArea.classList.add('hidden');
-                        if (validateBtn) validateBtn.classList.add('hidden');
+                        if (validateBtn) validateBtn.classList.add('hidden'); // Ensure hidden if completed
                         if (detailsElement) detailsElement.open = false; // Close completed section
                     } else {
                         section.classList.add('section-locked');
                         section.style.borderColor = '#CBD5E0'; /* Gray for locked */
                         if (summarySpan) summarySpan.style.color = '#607D8B';
                         if (miniQuizArea) miniQuizArea.classList.add('hidden');
-                        if (validateBtn) validateBtn.classList.add('hidden');
+                        if (validateBtn) validateBtn.classList.add('hidden'); // Ensure hidden if locked
                         if (detailsElement) detailsElement.open = false; // Keep locked sections closed
                     }
                 });
@@ -892,9 +896,10 @@
                 currentQuizQuestionsSet = quizSet;
                 const questionData = currentQuizQuestionsSet[currentQuizQuestionIndex];
                 const container = document.getElementById(containerElementId);
+                const totalQuestions = currentQuizQuestionsSet.length;
 
                 container.innerHTML = `
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">${questionData.question}</h3>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Question ${currentQuizQuestionIndex + 1} sur ${totalQuestions} : ${questionData.question}</h3>
                     <div class="space-y-3 mb-6" id="${containerElementId}-options"></div>
                     <div class="p-4 rounded-lg text-sm hidden" id="${containerElementId}-feedback"></div>
                     <div class="mt-4 p-4 bg-gray-50 rounded-lg text-sm text-gray-700 hidden" id="${containerElementId}-explanation">
@@ -918,12 +923,30 @@
                     optionsContainer.appendChild(div);
                 });
 
+                // Add event listener for radio button changes to update visual feedback
+                optionsContainer.querySelectorAll('input[type="radio"]').forEach(radio => {
+                    radio.addEventListener('change', (event) => {
+                        optionsContainer.querySelectorAll('label').forEach(label => {
+                            label.classList.remove('selected-option-visual'); // Remove from all
+                            label.style.backgroundColor = ''; // Reset background
+                            label.style.color = ''; // Reset text color
+                        });
+                        if (event.target.checked) {
+                            const selectedLabel = optionsContainer.querySelector(`label[for="${event.target.id}"]`);
+                            selectedLabel.classList.add('selected-option-visual'); // Add class for visual feedback
+                            selectedLabel.style.backgroundColor = 'var(--accent-dark-color)'; // Apply dark accent
+                            selectedLabel.style.color = '#FFFFFF'; // Apply white text
+                        }
+                    });
+                });
+
                 // Attach event listeners for the new buttons
                 container.querySelector('.submit-quiz-answer-btn').addEventListener('click', () => submitQuizAnswer(containerElementId));
                 container.querySelector('.next-quiz-question-btn').addEventListener('click', () => nextQuizQuestion(containerElementId));
             }
 
             function submitQuizAnswer(containerElementId) {
+                console.log(`Submitting quiz answer for ${containerElementId}. Question index: ${currentQuizQuestionIndex}`);
                 const container = document.getElementById(containerElementId);
                 const selectedOption = container.querySelector(`input[name="${containerElementId}-answer"]:checked`);
                 const feedbackElement = container.querySelector(`#${containerElementId}-feedback`);
@@ -931,6 +954,15 @@
                 const explanationText = container.querySelector(`#${containerElementId}-explanation-text`);
                 const submitBtn = container.querySelector('.submit-quiz-answer-btn');
                 const nextBtn = container.querySelector('.next-quiz-question-btn');
+                const validateSectionBtn = document.querySelector(`#${currentActiveQuizType} .validate-section-btn`); 
+
+                // Reset visual feedback for all options
+                container.querySelectorAll('.quiz-option label').forEach(label => {
+                    label.classList.remove('selected-option-visual');
+                    label.style.backgroundColor = ''; // Reset background
+                    label.style.color = ''; // Reset text color
+                });
+
 
                 if (!selectedOption) {
                     feedbackElement.textContent = "Veuillez sélectionner une réponse.";
@@ -942,6 +974,7 @@
                 const selectedAnswerIndex = parseInt(selectedOption.value);
                 const questionData = currentQuizQuestionsSet[currentQuizQuestionIndex];
 
+                // Disable all radio buttons after submission
                 container.querySelectorAll(`input[name="${containerElementId}-answer"]`).forEach(radio => radio.disabled = true);
 
                 let isCorrect;
@@ -967,38 +1000,44 @@
                 explanationElement.classList.remove('hidden');
                 
                 submitBtn.classList.add('hidden');
-                nextBtn.classList.remove('hidden');
-            }
 
-            function nextQuizQuestion(containerElementId) {
-                currentQuizQuestionIndex++;
-                if (currentQuizQuestionIndex < currentQuizQuestionsSet.length) {
-                    loadQuizQuestion(currentQuizQuestionsSet, containerElementId);
-                } else {
-                    // Mini-quiz finished
-                    const currentSectionId = currentActiveQuizType; 
-                    const totalQuestions = allQuizQuestions[currentSectionId].length;
+                // Logic for showing Next Question or Validate Section / Retry buttons
+                if (currentQuizQuestionIndex === currentQuizQuestionsSet.length - 1) {
+                    console.log("This is the last question of the mini-quiz.");
+                    nextBtn.classList.add('hidden'); // Hide next question button on last question
                     
-                    if (miniQuizCorrectAnswersCount === totalQuestions) {
-                        // All correct, enable validate button
-                        console.log(`Mini-quiz for ${currentSectionId} passed! Showing validate button.`);
-                        document.querySelector(`#${currentSectionId} .validate-section-btn`).classList.remove('hidden');
-                        document.getElementById(containerElementId).innerHTML = `<p class="text-green-700 font-semibold">Mini-quiz réussi à 100% ! Vous pouvez valider cette section. ✅</p>`;
+                    if (miniQuizCorrectAnswersCount === currentQuizQuestionsSet.length) {
+                        console.log("All questions correct. Showing Validate Section button.");
+                        if (validateSectionBtn) validateSectionBtn.classList.remove('hidden');
+                        document.getElementById(containerElementId).innerHTML += `<p class="text-green-700 font-semibold mt-4">Mini-quiz réussi à 100% ! Vous pouvez valider cette section. ✅</p>`;
                     } else {
-                        // Not all correct, ask to retry
-                        console.log(`Mini-quiz for ${currentSectionId} failed. Asking to retry.`);
-                        document.getElementById(containerElementId).innerHTML = `
-                            <p class="text-red-700 font-semibold mb-4">Mini-quiz non réussi (${miniQuizCorrectAnswersCount}/${totalQuestions} bonnes réponses). Veuillez réessayer pour valider la section. 😔</p>
-                            <button class="retry-mini-quiz-btn py-2 px-4 bg-red-600 text-white rounded-lg font-semibold hover:bg-red-700 transition" data-section="${currentSectionId}">Réessayer le Mini-Quiz 🔄</button>
+                        console.log("Not all questions correct. Showing Retry button.");
+                        document.getElementById(containerElementId).innerHTML += `
+                            <p class="text-red-700 font-semibold mb-4 mt-4">Mini-quiz non réussi (${miniQuizCorrectAnswersCount}/${currentQuizQuestionsSet.length} bonnes réponses). Veuillez réessayer pour valider la section. 😔</p>
+                            <button class="retry-mini-quiz-btn py-2 px-4 bg-red-600 text-white rounded-lg font-semibold hover:bg-red-700 transition" data-section="${currentActiveQuizType}">Réessayer le Mini-Quiz 🔄</button>
                         `;
                         document.getElementById(containerElementId).querySelector('.retry-mini-quiz-btn').addEventListener('click', (e) => {
                             startMiniQuiz(e.target.dataset.section);
                         });
                     }
-                    currentActiveQuizType = null; // Reset active quiz type
-                    currentQuizQuestionIndex = 0; // Reset for next quiz
-                    miniQuizCorrectAnswersCount = 0; // Reset for next quiz
+                } else {
+                    nextBtn.classList.remove('hidden'); // Show next question button if not last
                 }
+            }
+
+            function nextQuizQuestion(containerElementId) {
+                console.log(`Moving to next quiz question for ${containerElementId}. Current index: ${currentQuizQuestionIndex}`);
+                currentQuizQuestionIndex++;
+                // Only load next question if there are more questions in the current set
+                if (currentQuizQuestionIndex < currentQuizQuestionsSet.length) {
+                    loadQuizQuestion(currentQuizQuestionsSet, containerElementId);
+                } else {
+                    // This block should ideally not be reached if submitQuizAnswer handles the last question correctly
+                    // However, to prevent any unexpected behavior, we ensure quiz state is reset here.
+                    console.warn("nextQuizQuestion reached end of quiz, but submitQuizAnswer should have handled this.");
+                }
+                // Important: Do NOT reset currentQuizQuestionIndex or miniQuizCorrectAnswersCount here.
+                // These are reset only when a section is validated or a mini-quiz is retried.
             }
 
             function startMiniQuiz(sectionId) {
@@ -1026,6 +1065,11 @@
                 if (miniQuizArea) miniQuizArea.classList.add('hidden');
                 const validateBtn = document.querySelector(`#${sectionId} .validate-section-btn`);
                 if (validateBtn) validateBtn.classList.add('hidden');
+
+                // Reset quiz state for the section that was just validated
+                currentActiveQuizType = null; 
+                currentQuizQuestionIndex = 0; 
+                miniQuizCorrectAnswersCount = 0; 
 
                 updateLearningSectionStates(); // Update UI for current and next sections
 
